@@ -1,0 +1,29 @@
+# requirements.txt -- manifest of Python packages needed to run this project
+#
+# Install everything with:
+#   pip install -r requirements.txt
+#
+# Core framework
+Django==6.0.6
+
+# ChatterBot: the machine-learning conversational engine.
+# NOTE: The original "chatterbot" package on PyPI has been unmaintained since
+# 2020 and does not install cleanly on modern Python (3.10+). This project
+# uses the actively maintained fork, which is published under the same
+# "chatterbot" package name on PyPI (currently version 1.2.14+) and is a
+# drop-in replacement with the same public API used in the ChatterBot docs.
+ChatterBot==1.2.14
+
+# chatterbot-corpus provides the bundled example conversation data
+# (greetings, small talk, etc.) used by ChatterBotCorpusTrainer.
+chatterbot-corpus==1.3.3
+
+# spaCy is used internally by ChatterBot for lightweight text
+# tokenization/tagging (see chatterbot.tagging.LowercaseTagger in settings.py).
+spacy>=3.8,<4.0
+
+# ChatterBot's corpus loader needs PyYAML for YAML-based conversation data.
+PyYAML>=6.0,<7.0
+
+# Click is required by spaCy's CLI layer and is often pulled in transitively.
+click>=8.1,<9.0
